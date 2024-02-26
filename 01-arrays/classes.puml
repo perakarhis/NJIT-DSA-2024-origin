@@ -1,0 +1,33 @@
+@startuml
+package oy.tol.tra {
+  class Grades {
+    -Integer[] grades
+    +Grades(Integer[] grades)
+    +<color:Red>reverse(): void</color>
+    +<color:Red>sort(): void</color>
+  }
+  class FirstTests
+  class SecondTests
+  class GenericTests
+  note bottom of GenericTests
+    3. <u>After step 2</u>, test your generic implementations of sort() and reverse().
+  end note 
+  GenericTests ..> Algorithms
+  class Algorithms {
+    +{static} <T extends Comparable<T>> void sort(T [] array)
+    +{static} <T> void reverse(T [] array)
+    +{static} <T> void swap(T [] array, int first, int second)
+  }
+  note top of Algorithms
+    2. <u>After step 1</u>., implement sort, reverse and
+    swap as generic algorithms and <i>call</i> these from Grades.
+  end note 
+  class Algorithms #pink;line:red
+}
+FirstTests ..> Grades : tests
+SecondTests ..> Grades : tests
+Grades ..> Algorithms
+note bottom of Grades
+  1. <u>First</u>, analyse correctness, test and fix the issues in sort() and reverse() methods.
+end note 
+@enduml
