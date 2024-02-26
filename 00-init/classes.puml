@@ -1,0 +1,20 @@
+@startuml
+package oy.tol.tra {
+  class SSN {
+  +{static} Result verifySSN(String ssn)
+  }
+  class SSNTests
+  note left of SSN
+    Test and fix the SSN.vefifySSN to solve the failing test.
+  end note 
+  class SSN #pink;line:red
+
+  enum Result {
+    +INVALID_SSN
+    +VALID_TEST_SSN
+    +VALID_SSN
+  }
+  SSNTests ..> SSN : tests
+  SSN +-- Result
+}
+@enduml
