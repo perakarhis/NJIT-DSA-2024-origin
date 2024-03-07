@@ -1,4 +1,4 @@
-# 67-phonebook Phonebook task
+# 04-phonebook Phonebook task
 
 
 Data structures and algorithms 2024.
