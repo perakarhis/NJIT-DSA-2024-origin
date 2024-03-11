@@ -1,0 +1,94 @@
+@startuml Phonebook
+package oy.tol.tra {  
+  class Algorithms
+  class Person {
+    -firstName : String
+    -lastName : String
+    +Person(firstName : String, lastName : String)
+    +getLastName() : String
+    +equals() : boolean
+    +<color:Red>hashCode() : int</color>
+    +<color:Red>compareTo() : int</color>
+  }
+  class PhoneNumber {
+    -countryCode: String
+    -areaCode: String
+    -phoneNumber: String
+    +getPhoneNumber() : String
+    +equals() : boolean
+    +compareTo() : int
+  }
+  Person ..|> java.lang.Comparable
+  PhoneNumber ..|> java.lang.Comparable
+  Person --|> java.lang.Object
+  PhoneNumber --|> java.lang.Object
+
+  class Pair<K extends Comparable<K>,V> {
+    -key: K
+    -value: V
+    +Pair(key: K, value; V)
+    +getKey() : K
+    +getValue() : V
+    +compareTo(o : Pair<K,V>) : int
+  }
+  Pair ..|> java.lang.Comparable
+  interface Dictionary<K extends Comparable<K>, V> {
+    +getType() : Type
+    +ensureCapacity(size: int): void
+    +add(key : K, value :V) : boolean
+    +size() : int
+    +find(K key) : V
+    +printStatus() : void
+    +toSortedArray() : Pair<K,V> []
+    +compress() : void
+  }
+  enum Type {
+    SLOW
+    HASHTABLE
+    BST
+  }
+  Dictionary +-- Type
+  
+  class KeyValueArray<K, V>
+  class KeyValueHashTable<K,V>
+  class KeyValueBSearchTree<K,V>
+  KeyValueArray ..|> Dictionary
+  KeyValueHashTable ..|> Dictionary
+  KeyValueBSearchTree ..|> Dictionary
+
+  KeyValueArray ..> Algorithms
+  KeyValueHashTable ..> Algorithms
+  KeyValueBSearchTree ..> Algorithms
+
+  class KeyValueHashTable #pink;line:red
+  class KeyValueBSearchTree #pink;line:red
+  
+  class PhoneBookTests
+  class GenericTests
+  note left of GenericTests
+    Implement all things red until tests pass.
+  end note 
+
+  PhoneBookTests ..> KeyValueArray : tests
+  PhoneBookTests ..> KeyValueHashTable : tests
+  PhoneBookTests ..> KeyValueBSearchTree : tests
+  GenericTests ..> KeyValueHashTable : tests
+  GenericTests ..> KeyValueBSearchTree : tests
+  KeyValueArray *-- "*" Pair : linearArray
+  KeyValueHashTable *-- "*" Pair : hashTable
+
+  package testdata {
+    entity PhoneBook.txt <<file>>
+  }
+  PhoneBookTests ..> testdata : reads
+}
+package java.lang {
+  interface Comparable<T> {
+    +compareTo(T to) : int
+  }
+  abstract Object {
+    +equals(Object o) : boolean
+    +hashCode() : int
+  }
+}
+@enduml
