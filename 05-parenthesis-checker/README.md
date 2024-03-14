@@ -41,6 +41,7 @@ You have completed 02-1-stack and your `StackImplementation` passes the `StackTe
 
 ## Instructions
 
+First, copy your StackImplementation.java file from the 02-1-stack task to src/main/java/yo/tol/tra folder of this task.
 
 In this exercise you will use your `StackImplementation` to handle Character data type instead of Integer. 
 
