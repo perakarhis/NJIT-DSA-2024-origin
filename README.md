@@ -79,6 +79,8 @@ In addition, there are short pre-recorded instructural videos available.
 |      |                         |                                     | **DL 2: April 7** |
 
 Time of deadline is always 23.59.59 EET of the relevant day.
+Note that 04-phoebook is a two-parts task. It cointains both hash table and binary search tree.
+Note that 07-books-and-words is a two-part task. It contains both hash table and binary search tree. Completing both increases grade by 2, completing only one of them increases grade by 1.
 
 ## Grading
 
