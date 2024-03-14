@@ -65,20 +65,22 @@ In addition, there are short pre-recorded instructural videos available.
 |      | 02 Analysis recap       | [02-2-queue](02-2-queue)            | Until DL 1        |
 |      | 03 Basic data st recap  | [03-binarysearch](03-binarysearch)  | Until DL 1        |
 |      | 04 Sorting              |                                     |                   |
-|  03  | 04 Sorting              | 04-hash-tables                      | Until DL 1        |
-|      | 05 Hash tables          | 05-binary-search-trees              | Until DL 1        |
-|      | 06 Binsry search trees  | Work on unfinished or next tasks    | Until DL 1        |
-|  04  | 05 Hash tables          | Work on unfinished or next tasks    | Until DL 1        |
+|  03  | 04 Sorting              | [04-phonebook](04-phoebook)         | Until DL 1        |
+|      | 05 Hash tables          |                                     |                   |
+|      | 06 Binsry search trees  |                                     |                   |
+|  04  | 05 Hash tables          | Work on unfinished or next tasks    |                   |
 |      | 06 Binary search trees  |                                     |                   |
 |      | 07 Graphs BFS           |                                     | **DL 1: March 24**|
-|  05  | 07 Graphs DFS           | 02-3-stack-and-queue-II             | Until DL 2        |
-|      | 07 Graphs Kruskal       | 03-2-sorting                        | Until DL 2        |
-|      | 07 Graphs Dijsktra      | 04-2-hash-tbale                     | Until DL 2        |
-|      |                         | 05-2-binarry-search-trees           | Until DL 2        |
+|  05  | 07 Graphs DFS           | 05-parenthesis-checker              | Until DL 2        |
+|      | 07 Graphs Kruskal       | 06-daily-tasks                      | Until DL 2        |
+|      | 07 Graphs Dijsktra      | 07-books-and-words                  | Until DL 2        |
+|      |                         |                                     |                   |
 |  06  | 09 Independent study    | Independent work                    |                   |
 |      |                         |                                     | **DL 2: April 7** |
 
 Time of deadline is always 23.59.59 EET of the relevant day.
+Note that 04-phoebook is a two-parts task. It cointains both hash table and binary search tree.
+Note that 07-books-and-words is a two-part task. It contains both hash table and binary search tree. Completing both increases grade by 2, completing only one of them increases grade by 1.
 
 ## Grading
 
