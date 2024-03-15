@@ -1,8 +1,7 @@
-<<<<<<< HEAD
-=======
+
 package oy.tol.tra;
 
->>>>>>> 47434adae5c33ba265ca4c812421097df94ed50b
+
 public class Algorithms {
     public static <T extends Comparable<T>> void sort(T[] array) {
         int n = array.length;
