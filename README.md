@@ -72,7 +72,7 @@ In addition, there are short pre-recorded instructural videos available.
 |      | 06 Binary search trees  |                                     |                   |
 |      | 07 Graphs BFS           |                                     | **DL 1: March 24**|
 |  05  | 07 Graphs DFS           | [05-parenthesis-checker](05-parenthesis-checker)| Until DL 2        |
-|      | 07 Graphs Kruskal       | 06-dailytasks                       | Until DL 2        |
+|      | 07 Graphs Kruskal       | [06-dailytasks](06-dailytasks)      | Until DL 2        |
 |      | 07 Graphs Dijsktra      | 07-booksandwords                    | Until DL 2        |
 |      |                         |                                     |                   |
 |  06  | 09 Independent study    | Independent work                    |                   |
@@ -90,8 +90,8 @@ The course is graded with the following rules:
 2. Teachers download your solutions, runs them against the original tests, and inspects the code visually to see that they are accepltabel at the latest after each deadline.The fact that test are passed, does not mean an acceptable or good solution (tests do not relveal everything). **Changes to the solutions after deadline are not considered**. If task is not accepted, you have one week to improve the solution.
 3. All tasks until deadline 1 are required for a grade of 1 for the programming tasks.
 4. Successfully completed tasks for deadline 2 increase the grade
-5. All DL 1 tasks + one DL 2 task --> programming grade 2
-6. All previous tasks + two DL 2 tasks --> programming grade 3.
+5. All DL 1 tasks + 05 or 06 --> programming grade 2
+6. All DL 1 tasks + both 05 and 06 --> programming grade 3.
 7. All previous tasks + BST or hash table of 07 --> programminmg grade 4.
 8. All previous tasks + both BST and hashtable of 07 --> programming grade 5.
 9. Learning goals of the theory part is evaluated through Moodle Exams. Grade is determined by the exam score.
