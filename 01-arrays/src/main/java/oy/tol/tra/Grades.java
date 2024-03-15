@@ -7,7 +7,11 @@ public class Grades<T extends Comparable<T>> {
       this.grades = grades.clone();
    }
    /**
+<<<<<<< HEAD
     * 
+=======
+    *
+>>>>>>> 47434adae5c33ba265ca4c812421097df94ed50b
     */
    public void reverse() {
       int start = 0;
@@ -23,7 +27,11 @@ public class Grades<T extends Comparable<T>> {
    }
 
    /**
+<<<<<<< HEAD
     * 
+=======
+    *
+>>>>>>> 47434adae5c33ba265ca4c812421097df94ed50b
     */
    public void sort() {
       boolean swapped=true;
