@@ -32,11 +32,11 @@ public class DailyTasks {
          
          // 2. read the tasks for today by calling readTasks() -- implementing missing parts of it!
          
-         // 3. create Java Timer object (to member variable) to schedule your daily tasks.
-         
+         // 3. create Java Timer object (to member variable) to schedule your daily tasks. (Already given to you.)
+         timer = new Timer();
          // 4. schedule the timer at fixed rate with a new TimerTask,
-         //  using the delay constant values in the class member variable.
-         
+         //  using the delay constant values in the class member variable. (Already given to you.)
+         timer.scheduleAtFixedRate(new TimerTask() {
             // 4.1 in the timer task run:
             @Override
             public void run() {
