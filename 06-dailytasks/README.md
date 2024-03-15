@@ -8,6 +8,8 @@ Here you will see can see the figure from the queue task again and now you will 
 
 ![Classes in this exercise](classes.png)
 
+First, **copy** `QueueFactory.java` and `QueueImplementation.java` files **from** your previous queue task **to** `src/main/java/oy/tol/tra` folder of this task.
+
 **Implement** the missing code following the comments in the methods. After implementing, run the main either from VS Code (you should see `Run|Debug` just above the `main()` function) or from the command line:
 
 ```command
