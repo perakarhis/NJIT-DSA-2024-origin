@@ -188,7 +188,7 @@ The amount of test data is so large that those files are not included in this re
 
 [https://moodle.njit.edu.cn/mod/resource/view.php?id=7694](https://moodle.njit.edu.cn/mod/resource/view.php?id=7694)
 
- **Unzip** `towns.zip` contents and copy to the **root directory of this exercise**, so that tests can find the files. **DO NOT COPY THE  **DO NOT COPY THE PhoneBook.txt FILE!** It contains a different number of names, so some tests will fail if you copy it. **Never ever add these test files to git!!!**
+ **Unzip** `towns.zip` contents and copy to the **root directory of this exercise**, so that tests can find the files. **DO NOT COPY THE PhoneBook.txt FILE!** It contains a different number of names, so some tests will fail if you copy it. **Never ever add these test files to git!!!**
 
 This test creates a file `compare.csv` that has data on executing the test files, e.g. the number of elements (persons) in the dictionary per test file, and the time taken to add the elements to the dictionaries.
 
