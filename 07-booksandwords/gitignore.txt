@@ -1,0 +1,9 @@
+doc/
+target/
+*.class
+.settings
+.vscode
+.classpath
+.project
+.DS_Store
+/src/test/resources/*.txt

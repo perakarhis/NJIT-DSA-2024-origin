@@ -1,0 +1,70 @@
+@startuml
+skinparam groupInheritance 1
+package oy.tol.tira {
+  interface Book {
+    +void setSource(String fileName, String ignoreWordsFile)
+    +void countUniqueWords()
+    +void report()
+    +void close()
+    __Methods for testing__
+    +int getUniqueWordCount()
+    +int getTotalWordCount()
+    +String getWordInListAt(int position)
+    +int getWordCountInListAt(int position)
+  }
+  class BookFactory {
+    +{static} Book createBook()
+  }
+  class BookImplementation #pink;line:red
+  Book <|.. BookImplementation
+  note bottom of BookImplementation
+    This is a class you implement in your course project.
+    The obvious ways are hash table and binary search tree.
+  end note
+  class BasicTests
+  class PerformanceTests
+  BasicTests ..> BookImplementation : tests
+  PerformanceTests ..> BookImplementation : tests
+  BookFactory ..> BookImplementation : instantiates
+  class BooksAndWords {
+    +{static} void main(String[] args)
+  }
+  note top of BooksAndWords
+    Application class you can use to run the app 
+    from the command line.
+  end note
+  BooksAndWords ..> Book : calls
+  BooksAndWords ..> BookFactory : uses
+  package test.resources {
+    entity "several book files" <<file>>
+    entity "ignore words file" <<file>>
+  }
+  BookImplementation ..> test.resources : reads
+  package gui {
+    class BooksAndWordsGUI {
+      +{static}void main(String[] args)
+    }
+    BooksAndWordsGUI ..|> Book
+    BooksAndWordsGUI ..> Book : calls
+    BooksAndWordsGUI ..> BookFactory : uses
+    class ControlPanel {
+      +actionPerformed(ActionEvent e) 
+    }
+    class ResultsPanel {
+      +void drawWordsWithBars()
+    }
+    ControlPanel --|> javax.swing.JPanel
+    ResultsPanel --|> javax.swing.JPanel
+     BooksAndWordsGUI *-- ControlPanel
+     BooksAndWordsGUI *-- ResultsPanel
+  }
+  note top of gui 
+    Java Swing GUI application you can use to
+    run the app in a GUI window.
+  end note
+}
+package javax.swing {
+  class JPanel
+}
+
+@enduml
