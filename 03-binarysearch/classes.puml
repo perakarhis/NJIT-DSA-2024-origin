@@ -1,0 +1,25 @@
+@startuml
+package oy.tol.tra {  
+  class SearchArray {
+    +{static}slowLinearSearch(aValue : Integer, fromArray : Integer [], fromIndex : int, toIndex : int) : int
+    +{static}slowLinearSearch(aValue : String, fromArray : String [], fromIndex : int, toIndex : int) : int
+  }
+  note top of LinearSearchTests
+    1. Execute LinearSearchTests and see the slowness
+    of <b>SearchArray.slowLinearSearch()</b> methods.
+  end note 
+  class Algorithms {
+    +{static}<T extends Comparable<T>> sort(array: T []) : void
+    +<color:Red>{static}<T extends Comparable<T>> binarySearch(item : T, array : T [], fromIndex: int, toIndex: int): int</color> 
+  }
+  LinearSearchTests ..> SearchArray : tests
+  BinarySearchTests ..> SearchArray : tests
+  BinarySearchTests ..> Algorithms : tests
+  note top of Algorithms
+     2. BinarySearchTests uses <b>your</b> Algorithms class to
+     1) <i>sort</i> the array and then
+     2) to <i>search</i> for an element in it using the binarySearch algorithm
+     <b>you implement</b>.
+  end note
+}
+@enduml
