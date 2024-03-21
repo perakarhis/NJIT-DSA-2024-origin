@@ -1,8 +1,15 @@
 package oy.tol.tra;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
 public class KeyValueBSearchTree<K extends Comparable<K>, V> implements Dictionary<K, V> {
 
-    private TreeNode<K, V> root;
+    // This is the BST implementation, KeyValueHashTable has the hash table
+    // implementation
+
+    private TreeNode<K, V> root=null;
     private int count = 0;
     private int maxTreeDepth = 0;
 
@@ -16,82 +23,57 @@ public class KeyValueBSearchTree<K extends Comparable<K>, V> implements Dictiona
         return count;
     }
 
-    @Override
+   @Override
     public String getStatus() {
-        String toReturn = "Tree has max depth of " + maxTreeDepth + ".\n";
-        toReturn += "Longest collision chain in a tree node is " + TreeNode.longestCollisionChain + "\n";
+        StringBuilder toReturn1=new StringBuilder("Tree has max depth of " + maxTreeDepth + ".\n");
+        toReturn1.append("Longest collision chain in a tree node is " + TreeNode.longestCollisionChain + "\n");
         TreeAnalyzerVisitor<K, V> visitor = new TreeAnalyzerVisitor<>();
         root.accept(visitor);
-        toReturn += "Min path height to bottom: " + visitor.minHeight + "\n";
-        toReturn += "Max path height to bottom: " + visitor.maxHeight + "\n";
-        toReturn += "Ideal height if balanced: " + Math.ceil(Math.log(count)) + "\n";
+        toReturn1.append("Min path height to bottom: " + visitor.minHeight + "\n");
+        toReturn1.append("Max path height to bottom: " + visitor.maxHeight + "\n");
+        toReturn1.append("Ideal height if balanced: " + Math.ceil(Math.log(count)) + "\n");
+        String toReturn = toReturn1.toString();
         return toReturn;
     }
 
-    @Override
     public boolean add(K key, V value) throws IllegalArgumentException, OutOfMemoryError {
-        if (key == null) {
-            throw new IllegalArgumentException("Key cannot be null!");
+        if(key==null||value==null)
+        {
+            throw new IllegalArgumentException("This is a custom NullPointerException message");
         }
-
-        if (root == null) {
-            root = new TreeNode<>(key, value);
+        if(root==null)
+        {
+            root=new TreeNode<K,V>(key, value);
             count++;
             return true;
         }
-
-        int hash = calculateHash(key);
-        int added = root.insert(key, value, hash);
-
-        // Update the maximum tree depth
-        int currentDepth = TreeNode.currentAddTreeDepth;
-        if (currentDepth > maxTreeDepth) {
-            maxTreeDepth = currentDepth;
+        else {
+           count+= root.insert(key,value,key.hashCode());
+           return true;
         }
-        TreeNode.currentAddTreeDepth = 0;
-
-        if (added > 0) {
-            count++;
-            return true;
         }
-
-        return false;
-    }
-
-    @Override
-    public V find(K key) throws IllegalArgumentException {
-        if (key == null) {
-            throw new IllegalArgumentException("Key cannot be null!");
-        }
-
-        if (root == null) {
-            return null;
-        }
-
-        int hash = calculateHash(key);
-        return root.find(key, hash);
-    }
-
+   
     @Override
     public void ensureCapacity(int size) throws OutOfMemoryError {
         // Nothing to do here. Trees need no capacity.
     }
+  
+public Pair<K, V>[] toSortedArray() {
+    TreeToArrayVisitor<K, V> visitor = new TreeToArrayVisitor<>(count);
+    root.accept(visitor);
+    Pair<K, V>[] sorted = visitor.getArray();
+    Algorithms.mergeSort(sorted);
+    return sorted;
+}
 
-    @Override
-    public Pair<K, V>[] toSortedArray() {
-        TreeToArrayVisitor<K, V> visitor = new TreeToArrayVisitor<>(count);
-        root.accept(visitor);
-        Pair<K, V>[] sorted = visitor.getArray();
-        Algorithms.fastSort(sorted);
-        return sorted;
-    }
+public V find(K key) {
+    return root.find(key, key.hashCode());
+}
+
+
 
     @Override
     public void compress() throws OutOfMemoryError {
-        // Nothing to do here, since BST does not use extra space like array-based structures.
     }
-
-    private int calculateHash(K key) {
-        return key.hashCode(); 
-    }
+    
 }

@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8664c46-fb1f-4146-8963-97cfb555caf8" name="Changes" comment="">
+    <list default="true" id="e8664c46-fb1f-4146-8963-97cfb555caf8" name="Changes" comment="11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/compare-toarray.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/compare-toarray.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/Algorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/Algorithms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/KeyValueArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/KeyValueArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/KeyValueBSearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/KeyValueBSearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/KeyValueHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/KeyValueHashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/Algorithms.class" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/Algorithms.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/ComparatorTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/ComparatorTester.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/KeyValueArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/KeyValueArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/KeyValueBSearchTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/KeyValueBSearchTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/KeyValueHashTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/KeyValueHashTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/Person.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,16 +48,19 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/DSAhomework/NJIT-DSA-2024-origin/03-binarysearch&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/DSAhomework/NJIT-DSA-2024-origin/04-phonebook",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="JUnit.LinearSearchTests">
     <configuration name="BinarySearchTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="05-binsearch" />
@@ -74,4 +88,8 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="11" />
+    <option name="LAST_COMMIT_MESSAGE" value="11" />
+  </component>
 </project>

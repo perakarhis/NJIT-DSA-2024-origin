@@ -48,7 +48,6 @@ public class KeyValueArray<K extends Comparable<K>, V> implements Dictionary<K,V
    public boolean add(K key, V value) throws IllegalArgumentException, OutOfMemoryError {
       if (null == key || value == null) throw new IllegalArgumentException("Person or phone number cannot be null");
       for (Pair<K, V> pair : pairs) {
-         // Must not have duplicate keys, so check if key is already in the array.
          if (pair != null && pair.getKey().equals(key)) {
             pair.setValue(value);
             return true;
@@ -91,11 +90,17 @@ public class KeyValueArray<K extends Comparable<K>, V> implements Dictionary<K,V
 
    @Override
    public void compress() throws OutOfMemoryError {
-      // First partition the null's to the end of the array.
+      if (count == 0) {
+          return;
+      }
+  
       int indexOfFirstNull = Algorithms.partitionByRule(pairs, count, element -> element == null);
-      // Then reallocate using the index from partitioning, pointing the first null in the array.
-      reallocate(indexOfFirstNull);
-   }
+  
+      if (indexOfFirstNull > pairs.length ) {
+          reallocate(indexOfFirstNull*2);
+      }
+  }
+  
 
    @java.lang.SuppressWarnings("unchecked")
    private void reallocate(int newSize) throws OutOfMemoryError {
