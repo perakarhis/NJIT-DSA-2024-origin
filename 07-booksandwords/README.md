@@ -91,7 +91,7 @@ This information helps you in finding the time efficiency of your implementation
 
 ## Tips
 
-If your implementation has strange crashes with large data sets and you are using recursive algorithms (e.g. quicksort), check out the [WHAT-STACKOVERFLOW.md](./main/WHAT-STACKOVERFLOW.md). 
+If your implementation has strange crashes with large data sets and you are using recursive algorithms (e.g. quicksort), check out the [WHAT-STACKOVERFLOW.md](/WHAT-STACKOVERFLOW.md). 
 
 **Review** the course lectures about hash tables or binary search trees. Those are the solutions that you have to implement.
 
