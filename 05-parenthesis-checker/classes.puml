@@ -1,0 +1,48 @@
+@startuml
+package oy.tol.tra {
+  interface StackInterface<E> {
+    +int capacity()
+    +void push(E element)
+    +E pop()
+    +E peek()
+    +int size()
+    +boolean isEmpty()
+    +void clear()
+  }
+  class StackFactory {
+    +{static}StackInterface<Integer> createIntegerStack(int capacity)
+    +<color:Red>{static}StackInterface<Character> createCharacterStack(int capacity)</color>
+  }
+  note top of StackFactory
+    You must implement method createCharacterStack() in TASK-2.
+  end note
+  class StackImplementation implements StackInterface {
+    -Object[] itemArray
+    -int capacity
+    -int currentIndex
+  }
+  class ParenthesisChecker {
+    +<color:Red>{static} int checkParentheses(StackInterface<Character> stack, String fromString)</color>
+  }
+  note top of ParenthesisChecker
+    Implement this in  in TASK-2.
+  end note
+  class StackImplementation #pink;line:red
+  note right of StackImplementation 
+    Implement this first before TASK-2.md.
+  end note 
+  StackFactory ..> StackImplementation : instantiates
+  ParenthesisChecker ..> StackImplementation : uses
+  StackIsEmptyException --|> java.lang.Exception
+  StackAllocationException --|> java.lang.Exception
+  ParenthesesException --|> java.lang.Exception
+  ParenthesisChecker ..> ParenthesesException : throws
+  StackImplementation ..> StackIsEmptyException : throws
+  StackImplementation ..> StackAllocationException : throws
+  StackTests ..> StackImplementation : tests
+  ParenthesisTests ..> ParenthesisChecker : tests
+}
+package java.lang {
+  class Exception
+}
+@enduml
