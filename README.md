@@ -65,7 +65,7 @@ In addition, there are short pre-recorded instructural videos available.
 |      | 02 Analysis recap       | [02-2-queue](02-2-queue)            | Until DL 1        |
 |      | 03 Basic data st recap  | [03-binarysearch](03-binarysearch)  | Until DL 1        |
 |      | 04 Sorting              |                                     |                   |
-|  03  | 04 Sorting              | [04-phonebook](04-phoebook)         | Until DL 1        |
+|  03  | 04 Sorting              | [04-phonebook](04-phonebook)         | Until DL 1        |
 |      | 05 Hash tables          |                                     |                   |
 |      | 06 Binsry search trees  |                                     |                   |
 |  04  | 05 Hash tables          | Work on unfinished or next tasks    |                   |
