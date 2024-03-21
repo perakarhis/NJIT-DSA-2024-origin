@@ -1,0 +1,49 @@
+@startuml
+package oy.tol.tra {
+  package test.resources {
+    entity DailyTasks.txt <<file>>
+  }
+  interface QueueInterface<E> {
+    +int capacity()
+    +void enqueue(E element)
+    +E dequeue()
+    +E element()
+    +int size()
+    +boolean isEmpty()
+    +void clear()
+    +String toString()
+  }
+  class QueueFactory {
+    +<color:Red>{static}QueueInterface<Integer> createIntegerQueue(int capacity)</color>
+  }
+  class QueueImplementation implements QueueInterface
+  class DailyTasks {
+    +{static} void main(String[] args)
+    -<color:Red>run(): void</color>
+    -<color:Red>readTasks(): void</color>
+  }
+  class QueueImplementation #pink;line:red
+  note left of QueueImplementation 
+    You must implement things colored in pink.
+    First make sure QueueTests pass, only then work on the DailyTasks.
+  end note 
+
+  QueueFactory ..> QueueImplementation : instantiates
+  DailyTasks ..> QueueImplementation : uses
+  DailyTasks ..> java.util.Timer : uses
+  DailyTasks ..> test.resources : reads
+  QueueIsEmptyException --|> java.lang.Exception
+  QueueAllocationException --|> java.lang.Exception
+
+  QueueImplementation ..> QueueIsEmptyException : throws
+  QueueImplementation ..> QueueAllocationException : throws
+
+  QueueTests ..> QueueImplementation : tests
+}
+package java.util {
+  Timer ..> TimerTask
+}
+package java.lang {
+  class Exception 
+}
+@enduml

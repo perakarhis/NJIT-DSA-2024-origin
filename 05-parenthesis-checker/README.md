@@ -41,7 +41,11 @@ You have completed 02-1-stack and your `StackImplementation` passes the `StackTe
 
 ## Instructions
 
-First, copy your StackImplementation.java file from the 02-1-stack task to src/main/java/yo/tol/tra folder of this task.
+Here you can review the figure presented already in the first stack task. Now you will implement the TASK-2 related details of the image.
+
+![UML class diagram](classes.png)
+
+First, **copy** your `StackImplementation.java` file **from** the `02-1-stack` task **to** `src/main/java/yo/tol/tra` folder of this task.
 
 In this exercise you will use your `StackImplementation` to handle Character data type instead of Integer. 
 

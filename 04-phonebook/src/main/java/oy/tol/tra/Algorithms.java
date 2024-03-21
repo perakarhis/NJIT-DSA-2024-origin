@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package oy.tol.tra;
 
 import java.util.function.Predicate;
@@ -114,3 +115,6 @@ public class Algorithms {
     public static void sortWithComparator(Person[] array, DescendingPersonComparator descendingPersonComparator) {
     }
 }
+=======
+
+>>>>>>> 22d2de643662df6d70dd0c00ad818f80ce531d2b
