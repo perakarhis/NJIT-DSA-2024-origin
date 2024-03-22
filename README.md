@@ -65,7 +65,7 @@ In addition, there are short pre-recorded instructural videos available.
 |      | 02 Analysis recap       | [02-2-queue](02-2-queue)            | Until DL 1        |
 |      | 03 Basic data st recap  | [03-binarysearch](03-binarysearch)  | Until DL 1        |
 |      | 04 Sorting              |                                     |                   |
-|  03  | 04 Sorting              | [04-phonebook](04-phoebook)         | Until DL 1        |
+|  03  | 04 Sorting              | [04-phonebook](04-phonebook)         | Until DL 1        |
 |      | 05 Hash tables          |                                     |                   |
 |      | 06 Binsry search trees  |                                     |                   |
 |  04  | 05 Hash tables          | Work on unfinished or next tasks    |                   |
@@ -73,7 +73,7 @@ In addition, there are short pre-recorded instructural videos available.
 |      | 07 Graphs BFS           |                                     | **DL 1: March 24**|
 |  05  | 07 Graphs DFS           | [05-parenthesis-checker](05-parenthesis-checker)| Until DL 2        |
 |      | 07 Graphs Kruskal       | [06-dailytasks](06-dailytasks)      | Until DL 2        |
-|      | 07 Graphs Dijsktra      | 07-booksandwords                    | Until DL 2        |
+|      | 07 Graphs Dijsktra      | [07-booksandwords](07-booksandwords)| Until DL 2        |
 |      |                         |                                     |                   |
 |  06  | 09 Independent study    | Independent work                    |                   |
 |      |                         |                                     | **DL 2: April 7** |
