@@ -6,11 +6,15 @@
   <groupId>data-algo</groupId>
   <artifactId>04-1-stack</artifactId>
   <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-  <name>04-1-stack</name>
+    <name>04-1-stack</name>
   <url>https://opas.peppi.oulu.fi/fi/opintojakso/811312A/4550?period=2020-2021</url>
+    <modules>
+        <module>astack</module>
+    </modules>
 
-  <properties>
+    <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>

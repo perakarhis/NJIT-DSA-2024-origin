@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e8664c46-fb1f-4146-8963-97cfb555caf8" name="Changes" comment="11">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/compare-toarray.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/compare-toarray.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/Algorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/Algorithms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/KeyValueArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/KeyValueArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/KeyValueBSearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/KeyValueBSearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/KeyValueHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/KeyValueHashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/src/main/java/oy/tol/tra/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/Algorithms.class" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/Algorithms.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/ComparatorTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/ComparatorTester.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/KeyValueArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/KeyValueArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/KeyValueBSearchTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/KeyValueBSearchTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/KeyValueHashTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/KeyValueHashTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/../04-phonebook/target/classes/oy/tol/tra/Person.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../maven/apache-maven-3.9.6" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.9.6\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2dnx4922SZEapG2u3JARBOeygAz" />
+  <component name="ProjectViewState">
+    <option name="compactDirectories" value="true" />
+    <option name="flattenModules" value="true" />
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/DSAhomework/NJIT-DSA-2024-origin/04-phonebook",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.LinearSearchTests">
+    <configuration name="BinarySearchTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="05-binsearch" />
+      <option name="PACKAGE_NAME" value="oy.tol.tra" />
+      <option name="MAIN_CLASS_NAME" value="oy.tol.tra.BinarySearchTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinearSearchTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="05-binsearch" />
+      <option name="PACKAGE_NAME" value="oy.tol.tra" />
+      <option name="MAIN_CLASS_NAME" value="oy.tol.tra.LinearSearchTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.LinearSearchTests" />
+        <item itemvalue="JUnit.BinarySearchTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="11" />
+    <option name="LAST_COMMIT_MESSAGE" value="11" />
+  </component>
+</project>

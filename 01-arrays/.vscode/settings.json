@@ -1,0 +1,6 @@
+{
+    "java.debug.settings.onBuildFailureProceed": true,
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "main"
+    ]
+}

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: oy.tol.tra.SSNTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.054 s <<< FAILURE! - in oy.tol.tra.SSNTests
+invalidSSNTests  Time elapsed: 0.017 s  <<< ERROR!
+java.lang.NumberFormatException: For input string: "1p4"
+	at oy.tol.tra.SSNTests.invalidSSNTests(SSNTests.java:49)
+

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: oy.tol.tra.BinarySearchTests
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 50.512 s - in oy.tol.tra.BinarySearchTests

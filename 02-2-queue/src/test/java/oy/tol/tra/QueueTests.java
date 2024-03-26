@@ -34,8 +34,8 @@ import org.junit.jupiter.api.Order;
  public class QueueTests 
 {
     static Random randomizer = null;
-    static final int MIN_QUEUE_SIZE = 10;
-    static final int MAX_QUEUE_SIZE = 100;
+    static final int MIN_QUEUE_size = 10;
+    static final int MAX_QUEUE_size = 100;
     static int toAdd = 0;
     
     /**
@@ -48,10 +48,10 @@ import org.junit.jupiter.api.Order;
     static void initializeQueueImplementation() {
         System.out.println("Testing creating queue.");
         randomizer = new Random();
-        int queueSize = Math.max(2, randomizer.nextInt(100));
-        QueueInterface<Integer> queueToTest = QueueFactory.createIntegerQueue(queueSize);
+        int queuesize = Math.max(2, randomizer.nextInt(100));
+        QueueInterface<Integer> queueToTest = QueueFactory.createIntegerQueue(queuesize);
         assertNotNull(queueToTest, () -> "Could not create queue object to test. Implement QueueBuilder.createIntegerQueue().");
-        assertEquals(queueSize, queueToTest.capacity(), () -> "Queue capacity must be what was requested in creating it.");
+        assertEquals(queuesize, queueToTest.capacity(), () -> "Queue capacity must be what was requested in creating it.");
     }
 
     @Test
@@ -114,11 +114,11 @@ import org.junit.jupiter.api.Order;
     @DisplayName("Test filling the queue and emptying it using add and remove.")
     void addRemoveQueueTest() {
         System.out.println("Testing filling and emptying a queue.");
-        int queueSize = randomQueueSize();
-        QueueInterface<Integer> queueToTest = QueueFactory.createIntegerQueue(queueSize);
+        int queuesize = randomQueuesize();
+        QueueInterface<Integer> queueToTest = QueueFactory.createIntegerQueue(queuesize);
         assertTrue(queueToTest.isEmpty(), () -> "The queue should be empty.");
         // Create a random count to fill the queue to.
-        int elementCount = randomizer.nextInt(queueSize) + 5;
+        int elementCount = randomizer.nextInt(queuesize) + 5;
         // Fill the list with test data.
         List<Integer> testData = fillWithTestData(elementCount);
         // Push the test data to the queue, asserting that add succeeded.
@@ -146,10 +146,10 @@ import org.junit.jupiter.api.Order;
     @DisplayName("Test queue reallocation.")
     void overFillQueueTest() {
         System.out.println("Testing trying to overfill a queue.");
-        int queueSize = randomQueueSize();
-        QueueInterface<Integer> queueToTest = QueueFactory.createIntegerQueue(queueSize);
+        int queuesize = randomQueuesize();
+        QueueInterface<Integer> queueToTest = QueueFactory.createIntegerQueue(queuesize);
         // Fill the queue to contain max number of items.
-        List<Integer> testData = fillWithTestData(queueSize);
+        List<Integer> testData = fillWithTestData(queuesize);
         for (Integer value : testData) {
             assertDoesNotThrow(() -> queueToTest.enqueue(value), "In this test add must succeed, add failed.");
         }
@@ -170,7 +170,7 @@ import org.junit.jupiter.api.Order;
     void resetQueueTest() {
         System.out.println("Testing clearing a queue.");
         // Put something in the queue, then reset it and check if it is empty.
-        QueueInterface<Integer> queueToTest = QueueFactory.createIntegerQueue(randomQueueSize());
+        QueueInterface<Integer> queueToTest = QueueFactory.createIntegerQueue(randomQueuesize());
         queueToTest.enqueue(109);
         queueToTest.enqueue(111);
         queueToTest.clear();
@@ -185,8 +185,8 @@ import org.junit.jupiter.api.Order;
     @DisplayName("Testing the dequeue and reset methods")
     void removeTest() {
         System.out.println("Testing remove and reset methods with count and element values.");
-        int queueSize = randomQueueSize();
-        QueueInterface<Integer> queueToTest = QueueFactory.createIntegerQueue(queueSize);
+        int queuesize = randomQueuesize();
+        QueueInterface<Integer> queueToTest = QueueFactory.createIntegerQueue(queuesize);
         queueToTest.enqueue(109);
         queueToTest.enqueue(111);
         assertEquals(109, queueToTest.dequeue(), () -> "Remove must return the first value put in");
@@ -206,8 +206,8 @@ import org.junit.jupiter.api.Order;
     @DisplayName("Testing the print method")
     void printTest() {
         System.out.println("Testing printing queue values in correct order (head -> tail).");
-        int queueSize = randomQueueSize();
-        QueueInterface<Integer> queueToTest = QueueFactory.createIntegerQueue(queueSize);
+        int queuesize = randomQueuesize();
+        QueueInterface<Integer> queueToTest = QueueFactory.createIntegerQueue(queuesize);
         assertEquals("[]", queueToTest.toString(), () -> "Empty queue must print out as \"[]\"");
         
         assertDoesNotThrow(() -> queueToTest.enqueue(42), "In this test enqueue must succeed, but failed");
@@ -326,8 +326,8 @@ import org.junit.jupiter.api.Order;
      * @param itemCount
      * @return
      */
-    private int randomQueueSize() {
-        return Math.max(MIN_QUEUE_SIZE, randomizer.nextInt(MAX_QUEUE_SIZE));
+    private int randomQueuesize() {
+        return Math.max(MIN_QUEUE_size, randomizer.nextInt(MAX_QUEUE_size));
     }
 
     /**
