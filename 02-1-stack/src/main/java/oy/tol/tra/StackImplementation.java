@@ -24,8 +24,15 @@ public class StackImplementation<E> implements StackInterface<E> {
     */
    public StackImplementation() throws StackAllocationException {
       // TODO: call the constructor with size parameter with default size of 10.
-         capacity=DEFAULT_STACK_SIZE;
-         itemArray=new Object[DEFAULT_STACK_SIZE];
+      try 
+      {
+         itemArray = new Object[DEFAULT_STACK_SIZE] ;
+         this.capacity = DEFAULT_STACK_SIZE;
+      }
+      catch (Exception e)
+      {
+         throw new StackAllocationException("The programme failed to allocate space for the stack");
+      }
       
    }
 
@@ -37,64 +44,70 @@ public class StackImplementation<E> implements StackInterface<E> {
     * @throws StackAllocationException If cannot allocate room for the internal array.
     */
    public StackImplementation(int capacity) throws StackAllocationException {
-      if(capacity<2){ 
-         throw new StackAllocationException("Capacity must be at least 2.");
+      if(capacity < 2)
+      {
+         throw new StackAllocationException("The capacity is less than 2");
       }
-      this.capacity=capacity;
-      itemArray=new Object[capacity];
+      try 
+      {
+         itemArray = new Object[capacity] ;
+         this.capacity = capacity;
+      }
+      catch (Exception e)
+      {
+         throw new StackAllocationException("The programme failed to allocate space for the stack");
+      }
    }
 
    @Override
    public int capacity() {
       // TODO: Implement this
-      return capacity;
+      return this.capacity;
    }
 
    @Override
    public void push(E element) throws StackAllocationException, NullPointerException {
       // TODO: Implement this
-      
-      if(size()==capacity()){
-         Object[] newArray=new Object[this.capacity*2+1];
-         for (int i = 0; i < itemArray.length; i++) {
-            newArray[i]=itemArray[i];
+      if (element == null) {
+         throw new NullPointerException("The element is null.");
+     }
+     if (currentIndex == capacity - 1) {
+         Object [] newOne = new Object[capacity+10];
+         for(int i = 0; i < capacity; ++i)
+         {
+            newOne[i] = itemArray[i];
          }
-         itemArray=newArray;
-         newArray=null;
-         capacity=capacity*2+1;
-         }
-         if(element==null){
-            throw new NullPointerException();
-         }
-         itemArray[++currentIndex]=element;      
-      }
-               
-   
+         this.capacity =  capacity+10;
+         itemArray = newOne;
+
+     }
+     itemArray[++currentIndex] = element;
+   }
 
    @SuppressWarnings("unchecked")
    @Override
    public E pop() throws StackIsEmptyException {
-      if(isEmpty()){
-         throw new StackIsEmptyException("Cannot pop from an empty stack.");
+      if(currentIndex==-1)
+      {
+         throw new StackIsEmptyException("The stack is empty, you cannot pop any element");
       }
       return (E)itemArray[currentIndex--];
    }
-   
 
    @SuppressWarnings("unchecked")
    @Override
    public E peek() throws StackIsEmptyException {
-      if(isEmpty()){
-         throw new StackIsEmptyException("Cannot peek into an empty stack.");
+      if(currentIndex==-1)
+      {
+         throw new StackIsEmptyException("The stack is empty, you cannot get the peek element");
       }
       return (E)itemArray[currentIndex];
    }
-   
 
    @Override
    public int size() {
       // TODO: Implement this
-      return currentIndex + 1;
+      return currentIndex+1;
    }
 
    @Override
@@ -106,7 +119,7 @@ public class StackImplementation<E> implements StackInterface<E> {
    @Override
    public boolean isEmpty() {
       // TODO: Implement this
-      return currentIndex == -1;
+      return currentIndex==-1;
    }
 
    @Override
