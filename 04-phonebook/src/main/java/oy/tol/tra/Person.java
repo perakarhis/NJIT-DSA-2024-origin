@@ -30,9 +30,15 @@ public class Person implements Comparable<Person> {
     public String toString() {
         return getFullName();
     }
+
     @Override
     public int hashCode() {
-        return getFullName().hashCode();
+        int hash = 31;
+        String fullName = getFullName();
+        for(int i = 0; i < fullName.length(); i++){
+            hash = (hash * 31 + fullName.charAt(i));
+        }
+        return hash;
     }
 
     @Override
@@ -42,6 +48,7 @@ public class Person implements Comparable<Person> {
         }
         return false;
     }
+
     @Override
     public int compareTo(Person other) {
         return getFullName().compareTo(other.getFullName());
