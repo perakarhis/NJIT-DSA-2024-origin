@@ -1,33 +1,42 @@
 package oy.tol.tra;
 
+
 public class QueueImplementation<E> implements QueueInterface<E> {
-    private Object [] itemArray;
+    private Object[] itemArray;
     private int capacity;
-    private int current = 0;
     private int head = 0;
-    private int tail = -1;
-    private static final int DEFAULT_STACK_SIZE = 10;
+    private int tail = 0;
+    private int size = 0;
+    private static final int DEFAULT_QUEUE_SIZE = 10;
 
-    /**
-     * Allocates a queue with a default capacity.
-     * @throws QueueAllocationException
-     */
     public QueueImplementation() throws QueueAllocationException {
-        capacity=DEFAULT_STACK_SIZE;
-        itemArray=new Object[DEFAULT_STACK_SIZE];
+        try {
+            itemArray = new Object[DEFAULT_QUEUE_SIZE];
+            this.capacity = DEFAULT_QUEUE_SIZE;
+        } catch (Exception e) {
+            throw new QueueAllocationException("The programme failed to allocate space for the queue");
+        }
+
     }
 
-    /**
-     * @param capacity The capacity of the queue.
-     * @throws QueueAllocationException If cannot allocate room for the internal array.
-     */
-    public QueueImplementation(int capacity) throws QueueAllocationException {
-        if(capacity<2){
-            throw new QueueAllocationException("Capacity must be at least 2.");
+    public QueueImplementation(int capacity) {
+        if(capacity <= 2)
+        {
+           
+            throw new QueueAllocationException("The programme failed to allocate space for the queue");
+            
         }
-        this.capacity=capacity;
-        itemArray=new Object[capacity];
+        else
+        {
+            this.capacity = capacity;
+        }
+            
+        this.itemArray = new Object[capacity];
+        this.size = 0;
+        this.head = 0;
+        this.tail = 0;
     }
+
 
     @Override
     public int capacity() {
@@ -35,75 +44,90 @@ public class QueueImplementation<E> implements QueueInterface<E> {
     }
 
     @Override
-    public void enqueue(E element) throws QueueAllocationException, NullPointerException {
-        if(current==capacity){
-            Object[] tmp=new Object[this.capacity*2+1];
-            int indexOfItemArray=head;
-            int index=0;
-            int loop=current;
-            while(loop-->0){
-                tmp[index++]=itemArray[indexOfItemArray];
-                indexOfItemArray=(indexOfItemArray+1)%capacity;
-            }
-            head=0;
-            tail=index-1;
-            itemArray=tmp;
-            tmp=null;
-            capacity=capacity*2+1;
+    public E dequeue() throws QueueIsEmptyException {
+        if (isEmpty()) {
+            throw new QueueIsEmptyException("Queue is empty");
         }
-        if(element==null){
-            throw new NullPointerException();
-        }
-        tail=(tail+1)%capacity;
-        itemArray[tail]=element;
-        current++;
+        size--;
+        E tmp = (E) itemArray[head];
+        itemArray[head] = null;
+        head = (head + 1) % capacity;
+        return tmp;
     }
-
 
     @Override
-    public E dequeue() throws QueueIsEmptyException {
-        E returnE =element();
-        head=(head+1)%capacity;
-        current--;
-        return returnE;
+    public void enqueue(E element) throws QueueAllocationException, NullPointerException {
+        if (element == null) {
+            throw new NullPointerException("Element cannot be null");
+        }
+        if (tail == capacity && head != 0) {
+            itemArray[0] = element;
+            tail = 1;
+            size++;
+            return;
+        }
+        if (size == capacity) {
+            Object[] newOne = new Object[capacity + 10];
+            for (int i = 0; i < size; ++i) {
+                newOne[i] = itemArray[(head + i) % capacity];
+            }
+            tail = size;
+            head = 0;
+            this.capacity = capacity + 10;
+            itemArray = newOne;
+            itemArray[tail] = element;
+            tail++;
+            size++;
+            return;
+        }
+        itemArray[tail] = element;
+        tail++;
+        size++; 
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public E element() throws QueueIsEmptyException {
-        if(isEmpty()){
-            throw new QueueIsEmptyException("Cannot dequeue from an empty queue.");
+        if (isEmpty()) {
+            throw new QueueIsEmptyException("Queue is empty");
         }
         return (E)itemArray[head];
     }
 
     @Override
     public int size() {
-        return current;
+        return size;
     }
 
     @Override
     public boolean isEmpty() {
-        return current==0;
+        return (size == 0);
     }
 
     @Override
     public void clear() {
-        head=0;
-        tail=-1;
-        current=0;
+        head = 0;
+        tail = 0;
+        size = 0;
     }
 
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder("[");
-        int index=head;
-        int loopTime=current;
-        while(loopTime-->0){
-            builder.append(itemArray[index].toString());
-            index=(index+1)%capacity;
-            if(loopTime!=0){
-                builder.append(", ");
+        if (tail >= head)
+        {
+            for (var index = head; index < tail; index++) {
+                builder.append(itemArray[index].toString());
+                if (index < tail - 1) {
+                    builder.append(", ");
+                }
+            }
+        }
+        else {
+            for (var index = head; index < (tail+capacity); index++) {
+                builder.append(itemArray[index%capacity].toString());
+                if (index < (tail + capacity - 1)) {
+                    builder.append(", ");
+                }
             }
         }
         builder.append("]");
