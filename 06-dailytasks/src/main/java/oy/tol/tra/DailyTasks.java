@@ -4,9 +4,7 @@ import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * A class showing your daily schedule using a timer.
- */
+
 public class DailyTasks {
 
    private QueueInterface<String> dailyTaskQueue = null;
@@ -27,25 +25,22 @@ public class DailyTasks {
 
    private void run() {
       try {
-         // TODO:
-         // 1. create a queue (to the member variable!) for daily tasks, which are strings.
-         
-         // 2. read the tasks for today by calling readTasks() -- implementing missing parts of it!
-         
-         // 3. create Java Timer object (to member variable) to schedule your daily tasks. (Already given to you.)
+         dailyTaskQueue = QueueFactory.createStringQueue();
+         readTasks();
          timer = new Timer();
-         // 4. schedule the timer at fixed rate with a new TimerTask,
-         //  using the delay constant values in the class member variable. (Already given to you.)
          timer.scheduleAtFixedRate(new TimerTask() {
             // 4.1 in the timer task run:
             @Override
             public void run() {
-               // 4.1.1 check if there are tasks in the queue:
-               
-                  // 4.1.2 if yes, print the task from the queue, dequeueing it.
-                  
-                  // 4.1.3 if not, cancel the timer.
-               
+               if(!dailyTaskQueue.isEmpty())
+               {
+                  String task = dailyTaskQueue.dequeue();
+                  System.out.println(task);
+               }
+               else
+               {
+                  timer.cancel();
+               }
             }
          }, TASK_DELAY_IN_SECONDS, TASK_DELAY_IN_SECONDS);
       } catch (IOException e) {
@@ -58,10 +53,8 @@ public class DailyTasks {
       tasks = new String(getClass().getClassLoader().getResourceAsStream("DailyTasks.txt").readAllBytes());
       String[] allTasks = tasks.split("\\r?\\n");
       for (String task : allTasks) {
-         // TODO: Enqueue the task to your Queue implementation:
-         
+         dailyTaskQueue.enqueue(task);
       }
-      // TODO: print out to the console the number of tasks in the queue:
-      
+      System.out.println(dailyTaskQueue.size());
    }
 }

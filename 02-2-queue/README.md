@@ -50,7 +50,7 @@ Make sure to **read** the `QueueInterface` documentation **carefully** so that y
 
 If you have trouble getting started writing the code for the `QueueImplementation.java`, check out the previous Stack exercise and do this one in a similar fashion. Use a plain Java Object array as the internal data structure. Implement constructors for the queue, following the example from the Stack exercise.
 
-Make sure you allocate a larger array if there is an attempt to add more elements to the array than it currently fits. 
+Make sure you allocate a larger array if there is an attempt to add more elements to the array than it sizely fits. 
 
 **Make sure** all overridden methods are tagged with `@Override`:
 
